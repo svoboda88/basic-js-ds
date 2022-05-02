@@ -35,7 +35,15 @@ class BinarySearchTree {
   }
 
   has(data) {
-
+    let currNode = this.tree
+    while (currNode !== null) {
+      if (currNode.data === data) {
+        return true;
+      } else if (data < currNode.data) {
+        currNode = currNode.left;
+      } else currNode = currNode.right;
+    }
+    return false
   }
 
   find(data) {
