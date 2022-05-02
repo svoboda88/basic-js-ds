@@ -47,11 +47,19 @@ class BinarySearchTree {
   }
 
   min() {
-    
+    let minVal = this.tree
+    while (minVal.left !== null) {
+      minVal = minVal.left;
+    }
+    return minVal.data;
   }
 
   max() {
-    
+    let maxVal = this.tree 
+    while (maxVal.right !== null) {
+      maxVal = maxVal.right;
+    }
+    return maxVal.data;
   }
 }
 
