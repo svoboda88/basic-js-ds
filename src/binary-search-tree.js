@@ -39,7 +39,15 @@ class BinarySearchTree {
   }
 
   find(data) {
-    
+    let currNode = this.tree
+    while (currNode !== null) {
+      if (currNode.data === data) {
+        return currNode;
+      } else if (data < currNode.data) {
+        currNode = currNode.left;
+      } else currNode = currNode.right;
+    }
+    return null
   }
 
   remove(data) {
